@@ -27,6 +27,9 @@ str8zero-agent "your prompt" [OPTIONS]
 --platform [android|ios|web|all]           Target platform (default: all)
 --explain                                  Show detailed explanation
 --override [aider|gemini|codex|claude]     Override agent selection
+--create-agent NAME                        Create a new custom agent template
+--list-agents                              List all available agents
+--api-key KEY                              API key for the selected agent
 ```
 
 ### Examples
@@ -79,11 +82,32 @@ preferences:
 ```
 ~/Str8ZeROCLI/
 ├── cli/
-│   └── main.py
+│   ├── main.py
+│   ├── agents.py
+│   ├── mood_detector.py
+│   ├── custom_agents.py
+│   └── data/
+│       ├── emotion_lexicon.json
+│       └── syntax_patterns.json
 ├── config/
 │   └── defaults.yaml
 ├── logs/
 │   └── agent_history.json
+├── agents/
+│   └── [Your custom agents]
 └── generated_apps/
     └── [Your generated apps]
 ```
+
+## Custom Agents
+
+You can create your own custom agents to extend Str8ZeROCLI:
+
+```powershell
+# Create a custom agent template
+str8zero-agent --create-agent "My Custom Agent"
+```
+
+This will create a template in `~/Str8ZeROCLI/agents/my_custom_agent_agent.py` that you can customize.
+
+See the [examples/custom_agent_example.py](examples/custom_agent_example.py) for a sample implementation.
