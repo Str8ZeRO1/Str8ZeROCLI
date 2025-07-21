@@ -180,12 +180,7 @@ def get_agent_emoji(agent):
 
 def load_config():
     """Load configuration from defaults.yaml"""
-    # First try to load from user config directory
-    user_config_path = os.path.join(os.path.expanduser("~"), "Str8ZeROCLI", "config", "defaults.yaml")
-    
-    # Then try to load from repository config directory
-    repo_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    repo_config_path = os.path.join(repo_dir, "config", "defaults.yaml")
+    config_path = os.path.join(os.path.expanduser("~"), "Str8ZeROCLI", "config", "defaults.yaml")
     
     # Default config if file doesn't exist
     default_config = {
@@ -216,17 +211,11 @@ def load_config():
         }
     }
     
-    # Try to load from user config first, then repo config
+    # Try to load from file
     try:
         import yaml
-        if os.path.exists(user_config_path):
-            with open(user_config_path, 'r') as f:
-                return yaml.safe_load(f)
-        elif os.path.exists(repo_config_path):
-            with open(repo_config_path, 'r') as f:
-                return yaml.safe_load(f)
-        else:
-            return default_config
+        with open(config_path, 'r') as f:
+            return yaml.safe_load(f)
     except:
         return default_config
 
@@ -252,9 +241,7 @@ def generate_app(prompt, platform, explain):
         click.echo(f"  • Implemented AI features based on prompt context")
         click.echo(f"  • Created cross-platform compatibility layer")
     
-    # Save to user directory
-    output_dir = os.path.join(os.path.expanduser("~"), "Str8ZeROCLI", "generated_apps", app_name)
-    click.echo(f"\n💾 Files saved to: {output_dir}")
+    click.echo(f"\n💾 Files saved to: ~/Str8ZeROCLI/generated_apps/{app_name}")
 
 def deploy_app(prompt, platform, explain):
     """Deploy app to specified platforms"""
