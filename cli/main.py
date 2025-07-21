@@ -11,6 +11,7 @@ from pathlib import Path
 from mood_detector import MoodDetector
 from agents import get_agent
 from custom_agents import CustomAgentLoader
+from api_manager import ApiKeyManager
 
 @click.command()
 @click.argument('prompt', required=True)
@@ -21,7 +22,9 @@ from custom_agents import CustomAgentLoader
 @click.option('--create-agent', help='Create a new custom agent template')
 @click.option('--list-agents', is_flag=True, help='List all available agents')
 @click.option('--api-key', help='API key for the selected agent')
-def cli(prompt, task, platform, explain, override, create_agent, list_agents, api_key):
+@click.option('--setup-keys', is_flag=True, help='Setup API keys for services')
+@click.option('--list-services', is_flag=True, help='List available API services')
+def cli(prompt, task, platform, explain, override, create_agent, list_agents, api_key, setup_keys, list_services):
     """Str8ZeRO AI Agent - Transform symbolic intention into reality."""
     
     # Initialize custom agent loader
@@ -50,6 +53,22 @@ def cli(prompt, task, platform, explain, override, create_agent, list_agents, ap
             for agent_name in custom_agents:
                 agent = custom_agent_loader.get_custom_agent(agent_name)
                 click.echo(f"    - {agent_name} {agent.emoji}")
+        return
+        
+    if setup_keys:
+        click.echo("\n🔑 API Key Setup")
+        click.echo("Please run setup_api_keys.ps1 (Windows) or setup_api_keys.sh (Linux/macOS)")
+        click.echo("These scripts will guide you through setting up API keys for various services.")
+        return
+        
+    if list_services:
+        api_manager = ApiKeyManager()
+        services = api_manager.list_available_services()
+        click.echo("\n🔌 Available API Services:")
+        for service in services:
+            status = "✅" if service["has_key"] else "❌"
+            click.echo(f"  {status} {service['name']} - {service['free_tier']}")
+            click.echo(f"      {service['url']}")
         return
     
     click.echo(f"\n🚀 Str8ZeRO Agent - Processing: '{prompt}'")
@@ -209,6 +228,18 @@ def load_config():
         return default_config
 
 def process_with_agent(agent_name, prompt, task, platform, explain, api_key=None, custom_agent_loader=None):
+    """Process the prompt with the selected agent"""
+    # Initialize API key manager if needed
+    api_manager = None
+    if not api_key:
+        api_manager = ApiKeyManager()
+        # Try to get API key from manager
+        if agent_name == "Gemini CLI":
+            api_key = api_manager.get_api_key("gemini")
+        elif agent_name == "Claude Code":
+            api_key = api_manager.get_api_key("claude")
+        elif agent_name == "Codex CLI":
+            api_key = api_manager.get_api_key("openai")
     """Process the prompt with the selected agent"""
     try:
         # First check if it's a custom agent

@@ -30,6 +30,8 @@ str8zero-agent "your prompt" [OPTIONS]
 --create-agent NAME                        Create a new custom agent template
 --list-agents                              List all available agents
 --api-key KEY                              API key for the selected agent
+--setup-keys                               Setup API keys for services
+--list-services                            List available API services
 ```
 
 ### Examples
@@ -111,3 +113,23 @@ str8zero-agent --create-agent "My Custom Agent"
 This will create a template in `~/Str8ZeROCLI/agents/my_custom_agent_agent.py` that you can customize.
 
 See the [examples/custom_agent_example.py](examples/custom_agent_example.py) for a sample implementation.
+
+## API Keys
+
+Str8ZeROCLI can use various AI services that require API keys. You can set up these keys using:
+
+```powershell
+# Windows
+.\setup_api_keys.ps1
+
+# Linux/macOS
+./setup_api_keys.sh
+```
+
+Or list available services:
+
+```powershell
+str8zero-agent --list-services
+```
+
+API keys are stored securely in your user directory and are not synced with the repository.
