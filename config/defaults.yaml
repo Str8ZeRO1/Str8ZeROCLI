@@ -1,0 +1,43 @@
+# Str8ZeROCLI Agent Routing Configuration
+
+preferences:
+  vibe-gen:
+    mood:
+      rebellious: "Gemini CLI"
+      nostalgic: "Codex CLI"
+      elegant: "Claude Code"
+    syntax:
+      sketch-based: "Gemini CLI"
+      code-refactor: "Aider"
+    fallback: "Aider"
+
+  app-gen:
+    mood:
+      futuristic: "Gemini CLI"
+      precise: "Claude Code"
+      rapid: "Codex CLI"
+    syntax:
+      multi-file: "Claude Code"
+      API-bindings: "Codex CLI"
+    fallback: "Aider"
+
+  deploy:
+    mood:
+      cautious: "Claude Code"
+      rapid: "Aider"
+    syntax:
+      multi-file: "Claude Code"
+    fallback: "Aider"
+
+  monetize:
+    mood:
+      precise: "Claude Code"
+    syntax:
+      API-bindings: "Codex CLI"
+    fallback: "Codex CLI"
+
+defaults:
+  agent: "Aider"
+  log: true
+  auto_commit: true
+  telemetry: minimal
