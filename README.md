@@ -4,14 +4,8 @@ Str8ZeROCLI is a symbolic-to-reality agent router—an AI-powered command-line o
 
 ## Installation
 
-### Windows
 ```powershell
 irm https://raw.githubusercontent.com/Str8ZeRO1/Str8ZeROCLI/main/setup-str8zero.ps1 | iex
-```
-
-### Linux/macOS
-```bash
-curl -sL https://raw.githubusercontent.com/Str8ZeRO1/Str8ZeROCLI/main/install.sh | bash
 ```
 
 ## Usage
