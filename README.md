@@ -32,6 +32,13 @@ str8zero-agent "your prompt" [OPTIONS]
 --api-key KEY                              API key for the selected agent
 --setup-keys                               Setup API keys for services
 --list-services                            List available API services
+--profile NAME                             Use a specific profile
+```
+
+### Special Commands
+
+```
+str8zero-agent --list-profiles             List all available profiles
 ```
 
 ### Examples
@@ -133,3 +140,33 @@ str8zero-agent --list-services
 ```
 
 API keys are stored securely in your user directory and are not synced with the repository.
+
+## Profiles
+
+Str8ZeROCLI supports user profiles to customize your experience. Set up profiles with:
+
+```powershell
+# Windows
+.\setup-str8zero-profile.ps1
+
+# Linux/macOS
+./setup-str8zero-profile.sh
+```
+
+This creates several profiles:
+- **default**: Standard settings
+- **development**: Optimized for coding tasks
+- **creative**: Optimized for creative tasks
+- **deployment**: Optimized for deployment tasks
+
+Use a profile with:
+
+```powershell
+str8zero-agent "your prompt" --profile development
+```
+
+List available profiles:
+
+```powershell
+str8zero-agent --list-profiles
+```
