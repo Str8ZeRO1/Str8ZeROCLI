@@ -373,7 +373,9 @@ def log_request(prompt, task, platform, agent_result):
     if os.path.exists(log_file):
         try:
             with open(log_file, 'r') as f:
-                logs = json.load(f)
+                loaded_logs = json.load(f)
+                if isinstance(loaded_logs, list):
+                    logs = loaded_logs
         except:
             logs = []
     
