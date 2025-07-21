@@ -1,0 +1,11 @@
+# Automation Trigger
+# Generated: 07/21/2025 11:40:54
+# 
+# This file triggers the automation workflow for Str8ZeROCLI.
+# The workflow will:
+# 1. Run tests
+# 2. Build packages
+# 3. Deploy to production
+# 4. Update documentation
+#
+# DO NOT MODIFY THIS FILE MANUALLY
