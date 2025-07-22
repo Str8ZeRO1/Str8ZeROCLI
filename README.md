@@ -1,3 +1,5 @@
+<img width="1024" height="1024" alt="Str8ZeRO1_Logo_New" src="https://github.com/user-attachments/assets/4722551f-735f-4619-9917-b8ea65457300" />
+
 # Str8ZeROCLI
 
 Str8ZeROCLI is a symbolic-to-reality agent router—an AI-powered command-line orchestrator that transforms emotional intention into executable code. From "freedom as signal" to "rebellion meets prophecy," this CLI parses mood, syntax, and deployment goals to route tasks to the optimal coding agent: Aider, Gemini CLI, Codex CLI, Claude Code, or Warp. With sci-fi gearshift visuals, mood-based override logic, and auto-Git telemetry, it's mission control for creative developers ready to command living systems from the terminal.
