@@ -1,0 +1,5 @@
+This directory contains the digital signature of Alex Trujillo, owner of Str8ZeROCLI.
+
+The signature is used in legal documents, particularly the partnership agreement that governs revenue sharing between Alex Trujillo and users of the Str8ZeROCLI system.
+
+For security reasons, the actual signature image is not stored in the repository but is securely stored and applied to documents at runtime.

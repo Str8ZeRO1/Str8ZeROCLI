@@ -12,6 +12,7 @@ from mood_detector import MoodDetector
 from agents import get_agent
 from custom_agents import CustomAgentLoader
 from api_manager import ApiKeyManager
+from profile_manager import ProfileManager
 
 @click.command()
 @click.argument('prompt', required=True)
@@ -24,11 +25,26 @@ from api_manager import ApiKeyManager
 @click.option('--api-key', help='API key for the selected agent')
 @click.option('--setup-keys', is_flag=True, help='Setup API keys for services')
 @click.option('--list-services', is_flag=True, help='List available API services')
-def cli(prompt, task, platform, explain, override, create_agent, list_agents, api_key, setup_keys, list_services):
+@click.option('--profile', default='default', help='Use a specific profile')
+def cli(prompt, task, platform, explain, override, create_agent, list_agents, api_key, setup_keys, list_services, profile):
     """Str8ZeRO AI Agent - Transform symbolic intention into reality."""
     
-    # Initialize custom agent loader
+    # Initialize custom agent loader and profile manager
     custom_agent_loader = CustomAgentLoader()
+    profile_manager = ProfileManager()
+    
+    # Load profile
+    user_profile = profile_manager.get_profile(profile)
+    
+    # Apply profile preferences
+    if not task and "default_task" in user_profile.get("preferences", {}):
+        task = user_profile["preferences"]["default_task"]
+    
+    if platform == "all" and "default_platform" in user_profile.get("preferences", {}):
+        platform = user_profile["preferences"]["default_platform"]
+    
+    if not override and "default_agent" in user_profile.get("preferences", {}):
+        override = user_profile["preferences"]["default_agent"]
     
     # Handle special commands
     if create_agent:
@@ -69,6 +85,14 @@ def cli(prompt, task, platform, explain, override, create_agent, list_agents, ap
             status = "✅" if service["has_key"] else "❌"
             click.echo(f"  {status} {service['name']} - {service['free_tier']}")
             click.echo(f"      {service['url']}")
+        return
+        
+    # List available profiles
+    if prompt == "--list-profiles":
+        profiles = profile_manager.list_profiles()
+        click.echo("\n📁 Available Profiles:")
+        for p in profiles:
+            click.echo(f"  • {p['name']}: {p['description']}")
         return
     
     click.echo(f"\n🚀 Str8ZeRO Agent - Processing: '{prompt}'")

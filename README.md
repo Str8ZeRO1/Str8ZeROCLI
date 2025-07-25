@@ -1,3 +1,5 @@
+<img width="1024" height="1024" alt="Str8ZeRO1_Logo_New" src="https://github.com/user-attachments/assets/4722551f-735f-4619-9917-b8ea65457300" />
+
 # Str8ZeROCLI
 
 Str8ZeROCLI is a symbolic-to-reality agent router—an AI-powered command-line orchestrator that transforms emotional intention into executable code. From "freedom as signal" to "rebellion meets prophecy," this CLI parses mood, syntax, and deployment goals to route tasks to the optimal coding agent: Aider, Gemini CLI, Codex CLI, Claude Code, or Warp. With sci-fi gearshift visuals, mood-based override logic, and auto-Git telemetry, it's mission control for creative developers ready to command living systems from the terminal.
@@ -32,6 +34,13 @@ str8zero-agent "your prompt" [OPTIONS]
 --api-key KEY                              API key for the selected agent
 --setup-keys                               Setup API keys for services
 --list-services                            List available API services
+--profile NAME                             Use a specific profile
+```
+
+### Special Commands
+
+```
+str8zero-agent --list-profiles             List all available profiles
 ```
 
 ### Examples
@@ -133,3 +142,33 @@ str8zero-agent --list-services
 ```
 
 API keys are stored securely in your user directory and are not synced with the repository.
+
+## Profiles
+
+Str8ZeROCLI supports user profiles to customize your experience. Set up profiles with:
+
+```powershell
+# Windows
+.\setup-str8zero-profile.ps1
+
+# Linux/macOS
+./setup-str8zero-profile.sh
+```
+
+This creates several profiles:
+- **default**: Standard settings
+- **development**: Optimized for coding tasks
+- **creative**: Optimized for creative tasks
+- **deployment**: Optimized for deployment tasks
+
+Use a profile with:
+
+```powershell
+str8zero-agent "your prompt" --profile development
+```
+
+List available profiles:
+
+```powershell
+str8zero-agent --list-profiles
+```

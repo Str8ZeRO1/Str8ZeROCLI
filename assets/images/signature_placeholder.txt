@@ -1,0 +1,7 @@
+This file serves as a placeholder for Alex Trujillo's signature.
+
+The actual signature image is not stored in the public repository for security reasons.
+Instead, it is securely stored in the user's local Str8ZeROCLI installation using encryption.
+
+When legal documents are generated or displayed, the signature is retrieved from secure storage
+and applied to the documents as needed.
