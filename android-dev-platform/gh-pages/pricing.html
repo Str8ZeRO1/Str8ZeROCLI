@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EmailGuard Pricing - Immediate Payment Options</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: #e2e8f0;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container { max-width: 1200px; margin: 0 auto; }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .header h1 {
+            font-size: 3rem;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+        }
+        
+        .instant-payment {
+            background: linear-gradient(135deg, #064e3b, #10b981);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .plans {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .plan {
+            background: rgba(30, 41, 59, 0.9);
+            border-radius: 20px;
+            padding: 40px;
+            border: 2px solid #334155;
+            position: relative;
+        }
+        
+        .plan.popular {
+            border-color: #10b981;
+            transform: scale(1.05);
+        }
+        
+        .plan.popular::before {
+            content: "MOST POPULAR";
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #10b981;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        
+        .plan-name {
+            font-size: 1.8rem;
+            color: #3b82f6;
+            margin-bottom: 15px;
+        }
+        
+        .plan-price {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .your-share {
+            background: rgba(16, 185, 129, 0.2);
+            border: 1px solid #10b981;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .share-amount {
+            font-size: 2rem;
+            color: #10b981;
+            font-weight: bold;
+        }
+        
+        .features {
+            list-style: none;
+            margin: 25px 0;
+        }
+        
+        .features li {
+            padding: 8px 0;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .features li::before {
+            content: "✅";
+            position: absolute;
+            left: 0;
+        }
+        
+        .payment-options {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 25px;
+        }
+        
+        .payment-btn {
+            padding: 15px;
+            border-radius: 10px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .payment-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .paypal { background: linear-gradient(135deg, #0070ba, #003087); }
+        .venmo { background: linear-gradient(135deg, #3d95ce, #1d4f8f); }
+        .cashapp { background: linear-gradient(135deg, #00c244, #00a53c); }
+        .zelle { background: linear-gradient(135deg, #6f1ab6, #4a148c); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>💰 EmailGuard Pricing</h1>
+            <p style="font-size: 1.3rem; color: #94a3b8;">Choose your plan and pay directly - You earn 70% of every payment!</p>
+        </div>
+        
+        <div class="instant-payment">
+            <h2 style="margin-bottom: 15px;">⚡ Immediate Payment Processing</h2>
+            <p style="font-size: 1.1rem;">Pay via PayPal, Venmo, Cash App, or Zelle - Your subscription activates within 24 hours!</p>
+        </div>
+        
+        <div class="plans">
+            <div class="plan">
+                <h3 class="plan-name">EmailGuard Basic</h3>
+                <div class="plan-price">$4.99<span style="font-size: 1rem; color: #94a3b8;">/month</span></div>
+                
+                <div class="your-share">
+                    <div style="font-size: 0.9rem; margin-bottom: 5px;">Partner Earns:</div>
+                    <div class="share-amount">$3.49</div>
+                    <div style="font-size: 0.8rem; color: #94a3b8;">70% revenue share</div>
+                </div>
+                
+                <ul class="features">
+                    <li>Advanced spam filtering</li>
+                    <li>Real-time threat detection</li>
+                    <li>Basic email analytics</li>
+                    <li>Email support</li>
+                </ul>
+                
+                <div class="payment-options">
+                    <a href="https://paypal.me/jay100tru/4.99?note=EmailGuard-Basic" class="payment-btn paypal" target="_blank">
+                        💳 PayPal
+                    </a>
+                    <a href="venmo://paycharge?txn=pay&recipients=jay100tru&amount=4.99&note=EmailGuard-Basic" class="payment-btn venmo">
+                        📱 Venmo
+                    </a>
+                    <a href="https://cash.app/$jay100tru/4.99" class="payment-btn cashapp" target="_blank">
+                        💸 Cash App
+                    </a>
+                    <a href="mailto:jay100tru@gmail.com?subject=EmailGuard Basic - Zelle Payment&body=I want EmailGuard Basic ($4.99/month). Please send Zelle payment instructions." class="payment-btn zelle">
+                        🏦 Zelle
+                    </a>
+                </div>
+            </div>
+            
+            <div class="plan popular">
+                <h3 class="plan-name">EmailGuard Pro</h3>
+                <div class="plan-price">$9.99<span style="font-size: 1rem; color: #94a3b8;">/month</span></div>
+                
+                <div class="your-share">
+                    <div style="font-size: 0.9rem; margin-bottom: 5px;">Partner Earns:</div>
+                    <div class="share-amount">$6.99</div>
+                    <div style="font-size: 0.8rem; color: #94a3b8;">70% revenue share</div>
+                </div>
+                
+                <ul class="features">
+                    <li>Everything in Basic</li>
+                    <li>AI-powered threat detection</li>
+                    <li>Advanced filtering rules</li>
+                    <li>Priority support</li>
+                    <li>Multi-account management</li>
+                </ul>
+                
+                <div class="payment-options">
+                    <a href="https://paypal.me/jay100tru/9.99?note=EmailGuard-Pro" class="payment-btn paypal" target="_blank">
+                        💳 PayPal
+                    </a>
+                    <a href="venmo://paycharge?txn=pay&recipients=jay100tru&amount=9.99&note=EmailGuard-Pro" class="payment-btn venmo">
+                        📱 Venmo
+                    </a>
+                    <a href="https://cash.app/$jay100tru/9.99" class="payment-btn cashapp" target="_blank">
+                        💸 Cash App
+                    </a>
+                    <a href="mailto:jay100tru@gmail.com?subject=EmailGuard Pro - Zelle Payment&body=I want EmailGuard Pro ($9.99/month). Please send Zelle payment instructions." class="payment-btn zelle">
+                        🏦 Zelle
+                    </a>
+                </div>
+            </div>
+            
+            <div class="plan">
+                <h3 class="plan-name">EmailGuard Enterprise</h3>
+                <div class="plan-price">$29.99<span style="font-size: 1rem; color: #94a3b8;">/month</span></div>
+                
+                <div class="your-share">
+                    <div style="font-size: 0.9rem; margin-bottom: 5px;">Partner Earns:</div>
+                    <div class="share-amount">$20.99</div>
+                    <div style="font-size: 0.8rem; color: #94a3b8;">70% revenue share</div>
+                </div>
+                
+                <ul class="features">
+                    <li>Everything in Pro</li>
+                    <li>Team management</li>
+                    <li>Advanced reporting</li>
+                    <li>API access</li>
+                    <li>Dedicated support</li>
+                </ul>
+                
+                <div class="payment-options">
+                    <a href="https://paypal.me/jay100tru/29.99?note=EmailGuard-Enterprise" class="payment-btn paypal" target="_blank">
+                        💳 PayPal
+                    </a>
+                    <a href="venmo://paycharge?txn=pay&recipients=jay100tru&amount=29.99&note=EmailGuard-Enterprise" class="payment-btn venmo">
+                        📱 Venmo
+                    </a>
+                    <a href="https://cash.app/$jay100tru/29.99" class="payment-btn cashapp" target="_blank">
+                        💸 Cash App
+                    </a>
+                    <a href="mailto:jay100tru@gmail.com?subject=EmailGuard Enterprise - Zelle Payment&body=I want EmailGuard Enterprise ($29.99/month). Please send Zelle payment instructions." class="payment-btn zelle">
+                        🏦 Zelle
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div style="background: rgba(30, 41, 59, 0.9); padding: 40px; border-radius: 15px; margin: 40px 0; text-align: center;">
+            <h2 style="color: #10b981; margin-bottom: 20px;">🎯 How It Works</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; text-align: center;">
+                <div>
+                    <div style="font-size: 2rem; margin-bottom: 10px;">1️⃣</div>
+                    <h3 style="color: #3b82f6; margin-bottom: 10px;">Choose Plan</h3>
+                    <p style="color: #94a3b8;">Select the EmailGuard plan that fits your needs</p>
+                </div>
+                <div>
+                    <div style="font-size: 2rem; margin-bottom: 10px;">2️⃣</div>
+                    <h3 style="color: #3b82f6; margin-bottom: 10px;">Pay Direct</h3>
+                    <p style="color: #94a3b8;">Pay via PayPal, Venmo, Cash App, or Zelle</p>
+                </div>
+                <div>
+                    <div style="font-size: 2rem; margin-bottom: 10px;">3️⃣</div>
+                    <h3 style="color: #3b82f6; margin-bottom: 10px;">Get Activated</h3>
+                    <p style="color: #94a3b8;">Your subscription activates within 24 hours</p>
+                </div>
+                <div>
+                    <div style="font-size: 2rem; margin-bottom: 10px;">4️⃣</div>
+                    <h3 style="color: #3b82f6; margin-bottom: 10px;">Partner Earns</h3>
+                    <p style="color: #94a3b8;">Partner gets 70% of your payment directly</p>
+                </div>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin: 40px 0;">
+            <p style="color: #94a3b8; margin-bottom: 20px;">
+                Questions? Need help? Contact us directly:
+            </p>
+            <a href="mailto:jay100tru@gmail.com?subject=EmailGuard Support" 
+               style="color: #10b981; text-decoration: none; font-weight: bold;">
+                📧 jay100tru@gmail.com
+            </a>
+        </div>
+    </div>
+    
+    <script>
+        // Track payment button clicks
+        document.querySelectorAll('.payment-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const plan = this.closest('.plan').querySelector('.plan-name').textContent;
+                const method = this.textContent.trim();
+                
+                console.log(`Payment initiated: ${plan} via ${method}`);
+                
+                // Show confirmation
+                setTimeout(() => {
+                    alert(`💰 Payment processing via ${method}!\n\nYour EmailGuard subscription will be activated within 24 hours.\n\nYou'll receive a confirmation email once your account is ready.`);
+                }, 500);
+            });
+        });
+    </script>
+</body>
+</html>

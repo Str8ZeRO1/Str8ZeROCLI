@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EmailGuard - Temporary Integration</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f172a; color: #e2e8f0; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .header { text-align: center; margin-bottom: 40px; }
+        .header h1 { font-size: 3rem; background: linear-gradient(135deg, #3b82f6, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .header p { color: #94a3b8; font-size: 1.2rem; margin-top: 10px; }
+        .demo-card { background: #1e293b; border-radius: 12px; padding: 30px; margin-bottom: 30px; border: 1px solid #334155; }
+        .demo-card h2 { color: #3b82f6; margin-bottom: 20px; }
+        .revenue-tracker { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 30px; }
+        .stat-card { background: linear-gradient(135deg, #1e293b, #0f172a); padding: 25px; border-radius: 10px; border: 1px solid #3b82f6; }
+        .stat-value { font-size: 2.5rem; font-weight: bold; color: #10b981; margin-bottom: 5px; }
+        .stat-label { color: #94a3b8; font-size: 0.9rem; }
+        .payment-demo { background: #064e3b; border: 1px solid #10b981; padding: 25px; border-radius: 10px; margin: 20px 0; }
+        .btn { background: linear-gradient(135deg, #3b82f6, #8b5cf6); color: white; padding: 12px 24px; border: none; border-radius: 8px; cursor: pointer; font-size: 1rem; transition: all 0.3s; }
+        .btn:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3); }
+        .success { background: #10b981; color: white; padding: 15px; border-radius: 8px; margin: 10px 0; }
+        .warning { background: #f59e0b; color: white; padding: 15px; border-radius: 8px; margin: 10px 0; }
+        .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .feature-card { background: #1e293b; padding: 20px; border-radius: 10px; border: 1px solid #475569; }
+        .feature-card h3 { color: #3b82f6; margin-bottom: 10px; }
+        .countdown { background: linear-gradient(135deg, #dc2626, #ea580c); padding: 20px; border-radius: 10px; text-align: center; margin: 20px 0; }
+        .countdown h3 { margin-bottom: 10px; }
+        .timer { font-size: 2rem; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📧 EmailGuard</h1>
+            <p>Temporary Integration - Android Dev Platform</p>
+        </div>
+
+        <div class="countdown">
+            <h3>🚀 LAUNCH COUNTDOWN</h3>
+            <div class="timer" id="countdown">24:00:00</div>
+            <p>Until full domain deployment!</p>
+        </div>
+
+        <div class="revenue-tracker">
+            <div class="stat-card">
+                <div class="stat-value" id="revenue">$0.00</div>
+                <div class="stat-label">Total Revenue (Your 70%)</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="users">0</div>
+                <div class="stat-label">Active Users</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="conversions">0.0%</div>
+                <div class="stat-label">Conversion Rate</div>
+            </div>
+        </div>
+
+        <div class="demo-card">
+            <h2>💳 Demo Payment System</h2>
+            <p>Test the payment flow before going live:</p>
+            
+            <div class="payment-demo">
+                <h3>EmailGuard Pro - $4.99/month</h3>
+                <ul style="margin: 15px 0; padding-left: 20px;">
+                    <li>Advanced email filtering</li>
+                    <li>Real-time threat detection</li>
+                    <li>Priority support</li>
+                </ul>
+                <button class="btn" onclick="demoPayment()">💰 Test Payment ($4.99)</button>
+                <div id="payment-result"></div>
+            </div>
+        </div>
+
+        <div class="demo-card">
+            <h2>⚡ Live Features</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>🔒 Email Security</h3>
+                    <p>Advanced spam and phishing protection</p>
+                </div>
+                <div class="feature-card">
+                    <h3>📊 Analytics</h3>
+                    <p>Real-time threat monitoring</p>
+                </div>
+                <div class="feature-card">
+                    <h3>💰 Revenue Share</h3>
+                    <p>70% of all subscription fees</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🚀 Direct Distribution</h3>
+                    <p>Bypass app store fees entirely</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="demo-card">
+            <h2>📈 Marketing Campaign Ready</h2>
+            <div class="warning">
+                <strong>⏳ WAITING FOR:</strong>
+                <ul style="margin: 10px 0; padding-left: 20px;">
+                    <li>Domain: emailguard-direct.com ($10.99)</li>
+                    <li>Stripe API keys</li>
+                    <li>Launch authorization</li>
+                </ul>
+            </div>
+            
+            <button class="btn" onclick="launchMarketing()" style="width: 100%; margin-top: 15px;">
+                🎯 START MARKETING CAMPAIGN
+            </button>
+        </div>
+
+        <div class="demo-card">
+            <h2>🎊 Success Timeline</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+                <div style="background: #064e3b; padding: 15px; border-radius: 8px;">
+                    <strong>Week 1:</strong><br>
+                    $100 revenue<br>
+                    Your share: $70
+                </div>
+                <div style="background: #0c4a6e; padding: 15px; border-radius: 8px;">
+                    <strong>Month 1:</strong><br>
+                    $1,000 revenue<br>
+                    Your share: $700
+                </div>
+                <div style="background: #581c87; padding: 15px; border-radius: 8px;">
+                    <strong>Month 3:</strong><br>
+                    $5,000 revenue<br>
+                    Your share: $3,500
+                </div>
+                <div style="background: #7c2d12; padding: 15px; border-radius: 8px;">
+                    <strong>Year 1:</strong><br>
+                    $70,000+ revenue<br>
+                    Your share: $49,000+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="revenue-tracker.js"></script>
+    <script>
+        let revenue = 0;
+        let users = 0;
+        let demoMode = true;
+
+        // Countdown timer
+        let timeLeft = 24 * 60 * 60; // 24 hours in seconds
+        function updateCountdown() {
+            const hours = Math.floor(timeLeft / 3600);
+            const minutes = Math.floor((timeLeft % 3600) / 60);
+            const seconds = timeLeft % 60;
+            document.getElementById('countdown').textContent = 
+                `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            timeLeft--;
+            if (timeLeft < 0) timeLeft = 24 * 60 * 60; // Reset
+        }
+        setInterval(updateCountdown, 1000);
+
+        function demoPayment() {
+            const resultDiv = document.getElementById('payment-result');
+            resultDiv.innerHTML = '<div style="background: #10b981; color: white; padding: 10px; border-radius: 5px; margin-top: 10px;">✅ Demo Payment Processing...</div>';
+            
+            // Use the revenue tracker
+            setTimeout(() => {
+                const transaction = window.emailGuardRevenue.addTransaction(4.99, 'subscription');
+                
+                resultDiv.innerHTML = `
+                    <div style="background: #10b981; color: white; padding: 10px; border-radius: 5px; margin-top: 10px;">
+                        ✅ Payment Successful! Transaction ID: ${transaction.id}
+                    </div>
+                    <div style="background: #3b82f6; color: white; padding: 10px; border-radius: 5px; margin-top: 5px;">
+                        💰 Your 70% share: $${transaction.userShare.toFixed(2)}<br>
+                        🤝 Partner 20%: $${transaction.partnerShare.toFixed(2)}<br>
+                        📈 Marketing 10%: $${transaction.marketingShare.toFixed(2)}
+                    </div>
+                    <div style="background: #7c2d12; color: white; padding: 10px; border-radius: 5px; margin-top: 5px;">
+                        📊 Total Revenue: $${window.emailGuardRevenue.data.revenue.toFixed(2)} | Your Total: $${window.emailGuardRevenue.getYourShare().toFixed(2)}
+                    </div>
+                `;
+                
+                updateStats();
+            }, 1500);
+        }
+
+        function updateStats() {
+            if (window.emailGuardRevenue) {
+                document.getElementById('revenue').textContent = '$' + window.emailGuardRevenue.getYourShare().toFixed(2);
+                document.getElementById('users').textContent = window.emailGuardRevenue.data.users;
+                document.getElementById('conversions').textContent = window.emailGuardRevenue.data.conversions.toFixed(1) + '%';
+            }
+        }
+
+        function launchMarketing() {
+            alert('🚀 Marketing Campaign Ready!\n\nNext Steps:\n1. Purchase domain: emailguard-direct.com\n2. Set up Stripe account\n3. Deploy to production\n\nRevenue projection: $1,000+ monthly\nYour 70% share: $700+ monthly');
+        }
+
+        // Simulate some activity
+        setInterval(() => {
+            if (Math.random() > 0.8) {
+                revenue += Math.random() * 10;
+                users += Math.floor(Math.random() * 3);
+                updateStats();
+            }
+        }, 5000);
+
+        // Initialize
+        updateStats();
+    </script>
+</body>
+</html>

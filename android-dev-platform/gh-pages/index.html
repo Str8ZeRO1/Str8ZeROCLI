@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EmailGuard - Start Earning 70% Revenue Share Now!</title>
+    <meta name="description" content="Advanced email security with immediate 70% revenue share. Direct payments via PayPal, Venmo, Cash App, Zelle - no Stripe needed!">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="EmailGuard - Start Earning 70% Revenue Share Now!">
+    <meta property="og:description" content="Professional email security with immediate income generation. Direct payments to your PayPal, Venmo, Cash App, or Zelle.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://emailguard-pro.netlify.app">
+    
+    <!-- Custom URI handling -->
+    <script>
+        // Detect mobile and redirect to app
+        function launchApp() {
+            const isAndroid = /Android/i.test(navigator.userAgent);
+            const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+            
+            if (isAndroid) {
+                // Try to launch Android app
+                window.location.href = 'emailguard://launch?action=start&source=web';
+                
+                // Fallback to Play Store after delay
+                setTimeout(() => {
+                    window.location.href = 'https://play.google.com/store/apps/details?id=com.str8zero.emailguard';
+                }, 2000);
+            } else if (isIOS) {
+                // Future iOS support
+                alert('iOS version coming soon! Get notified at launch.');
+            } else {
+                // Desktop - show web version
+                window.location.href = '/emailguard-temp.html';
+            }
+        }
+        
+        // Track revenue
+        function trackRevenue(amount, type, user) {
+            // Send to app
+            if (typeof Android !== 'undefined' && Android.trackRevenue) {
+                Android.trackRevenue(amount, type, user);
+            } else {
+                // Fallback - send to URI
+                window.location.href = `emailguard://revenue?amount=${amount}&type=${type}&user=${user}`;
+            }
+        }
+    </script>
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: linear-gradient(135deg, #0f172a, #1e293b); color: #e2e8f0; min-height: 100vh; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .hero { text-align: center; padding: 60px 0; }
+        .hero h1 { font-size: 4rem; background: linear-gradient(135deg, #3b82f6, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 20px; }
+        .hero p { font-size: 1.5rem; color: #94a3b8; margin-bottom: 40px; }
+        .cta-button { background: linear-gradient(135deg, #3b82f6, #8b5cf6); color: white; padding: 20px 40px; border: none; border-radius: 12px; font-size: 1.2rem; cursor: pointer; text-decoration: none; display: inline-block; transition: all 0.3s; margin: 10px; }
+        .cta-button:hover { transform: translateY(-3px); box-shadow: 0 15px 40px rgba(59, 130, 246, 0.4); }
+        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin: 60px 0; }
+        .feature { background: rgba(30, 41, 59, 0.8); padding: 30px; border-radius: 15px; border: 1px solid #334155; }
+        .feature h3 { color: #3b82f6; margin-bottom: 15px; font-size: 1.5rem; }
+        .revenue-box { background: linear-gradient(135deg, #064e3b, #10b981); padding: 40px; border-radius: 15px; text-align: center; margin: 40px 0; }
+        .revenue-box h2 { font-size: 2.5rem; margin-bottom: 20px; }
+        .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 20px 0; }
+        .stat { background: rgba(255, 255, 255, 0.1); padding: 20px; border-radius: 10px; }
+        .stat-value { font-size: 2rem; font-weight: bold; color: #10b981; }
+        .stat-label { color: #94a3b8; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hero">
+            <h1>📧 EmailGuard</h1>
+            <p>Professional Email Security - Start Earning 70% Revenue Share NOW!</p>
+            <p style="color: #10b981; font-size: 1.2rem;">💰 Direct Payments • PayPal • Venmo • Cash App • Zelle</p>
+            
+            <a href="https://paypal.me/jay100tru/9.99?note=EmailGuard-Pro" class="cta-button" target="_blank" style="background: linear-gradient(135deg, #0070ba, #003087);">
+                💳 Pay via PayPal - $9.99
+            </a>
+            
+            <a href="#pricing" class="cta-button" style="background: linear-gradient(135deg, #10b981, #059669);">
+                💰 See All Payment Options
+            </a>
+        </div>
+
+        <div class="revenue-box">
+            <h2>⚡ START EARNING IMMEDIATELY</h2>
+            <p style="font-size: 1.3rem; margin-bottom: 20px;">Direct payments to YOUR accounts - no Stripe setup required!</p>
+            
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-value">70%</div>
+                    <div class="stat-label">Your Revenue Share</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">$700+</div>
+                    <div class="stat-label">Monthly Target (Month 1)</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">$49K+</div>
+                    <div class="stat-label">Annual Potential</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">0%</div>
+                    <div class="stat-label">App Store Fees</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="features">
+            <div class="feature">
+                <h3>🔒 Advanced Security</h3>
+                <p>AI-powered email filtering, real-time threat detection, and comprehensive spam protection for businesses and individuals.</p>
+            </div>
+            
+            <div class="feature">
+                <h3>📊 Revenue Tracking</h3>
+                <p>Real-time analytics showing your 70% revenue share, user growth, and conversion metrics with full transparency.</p>
+            </div>
+            
+            <div class="feature">
+                <h3>🚀 Direct Distribution</h3>
+                <p>Bypass Apple/Google app store fees entirely. Direct downloads mean higher profits and faster user acquisition.</p>
+            </div>
+            
+            <div class="feature">
+                <h3>💼 Partnership Model</h3>
+                <p>Proven 70/20/10 revenue split: 70% partner, 20% development, 10% marketing. Fair and profitable for everyone.</p>
+            </div>
+        </div>
+
+        <div style="background: rgba(30, 41, 59, 0.8); padding: 40px; border-radius: 15px; margin: 40px 0;">
+            <h2 style="color: #3b82f6; margin-bottom: 20px;">🎯 Launch Timeline</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                <div style="background: #064e3b; padding: 20px; border-radius: 10px;">
+                    <strong>Week 1:</strong> $100 revenue → $70 your share
+                </div>
+                <div style="background: #0c4a6e; padding: 20px; border-radius: 10px;">
+                    <strong>Month 1:</strong> $1,000 revenue → $700 your share
+                </div>
+                <div style="background: #581c87; padding: 20px; border-radius: 10px;">
+                    <strong>Month 3:</strong> $5,000 revenue → $3,500 your share
+                </div>
+                <div style="background: #7c2d12; padding: 20px; border-radius: 10px;">
+                    <strong>Year 1:</strong> $70,000+ revenue → $49,000+ your share
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin: 60px 0;">
+            <h2 style="color: #3b82f6; margin-bottom: 20px;">Ready to Launch?</h2>
+            <p style="color: #94a3b8; font-size: 1.2rem; margin-bottom: 30px;">
+                Professional email security with direct distribution and 70% revenue sharing
+            </p>
+            
+            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                <a href="#" onclick="launchApp()" class="cta-button">
+                    📱 Download EmailGuard
+                </a>
+                
+                <a href="mailto:jay100tru@gmail.com?subject=EmailGuard Partnership" class="cta-button" style="background: linear-gradient(135deg, #059669, #10b981);">
+                    💼 Start Partnership
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Analytics & Custom URI Integration -->
+    <script>
+        // Track page views
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'page_view', {
+                page_title: 'EmailGuard Landing',
+                page_location: window.location.href
+            });
+        }
+
+        // Handle URL parameters for custom campaigns
+        const urlParams = new URLSearchParams(window.location.search);
+        const campaign = urlParams.get('campaign');
+        const source = urlParams.get('source');
+        
+        if (campaign) {
+            // Track campaign
+            console.log(`Campaign: ${campaign}, Source: ${source}`);
+            
+            // Redirect to promo URI
+            setTimeout(() => {
+                if (campaign === 'launch') {
+                    window.location.href = `emailguard://promo?campaign=${campaign}&discount=70off`;
+                }
+            }, 3000);
+        }
+        
+        // Simulate some user activity for demo
+        setTimeout(() => {
+            if (window.emailGuardRevenue && typeof window.emailGuardRevenue.addTransaction === 'function') {
+                // Add some demo revenue
+                window.emailGuardRevenue.addTransaction(4.99, 'subscription', 'web-user-' + Date.now());
+            }
+        }, 5000);
+    </script>
+</body>
+</html>
